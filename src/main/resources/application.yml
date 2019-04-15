@@ -1,0 +1,34 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    master:
+      password: liuyunji
+      url: jdbc:mysql://192.168.2.169:3306/java-test?useUnicode=true&characterEncoding=UTF-8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      type: com.zaxxer.hikari.HikariDataSource
+    cluster:
+    - key: java-test2
+      password: liuyunji
+      url: jdbc:mysql://192.168.2.169:3306/java-test2?useUnicode=true&characterEncoding=UTF-8
+      idle-timeout: 20000
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      type: com.zaxxer.hikari.HikariDataSource
+    - key: java-test3
+      password: liuyunji
+      url: jdbc:mysql://192.168.2.169:3306/java-test3?useUnicode=true&characterEncoding=UTF-8
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml
+  config-location: classpath:/mybatis/config/mybatis-config.xml
+
+
+logging:
+  level:
+    com:
+      example:
+        demo:
+          repository: debug
